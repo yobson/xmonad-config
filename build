@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo config to $1
+
+pushd $HOME/.config/xmonad
+
+cabal clean
+cabal -O2 build
+find dist-newstyle -type f -name xmonad-config | head -n 1 | xargs -i cp {} $1
+
+popd
