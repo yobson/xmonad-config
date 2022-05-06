@@ -2,10 +2,13 @@ cabal-version:      2.4
 name:               xmonad-config
 version:            0.1.0.0
 maintainer:         james.hobson@jotron.com
-extra-source-files: build
+extra-source-files: build,
+                    install.sh
 data-dir:           other
 data-files:         *.sh,
-                    *.hs
+                    *.hs,
+                    *.rasi,
+                    *.png
 
 executable xmonad-config
     main-is:          xmonad.hs
