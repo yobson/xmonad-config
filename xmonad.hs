@@ -26,7 +26,7 @@ import Paths_xmonad_config
 myConfig ddir = def 
   { terminal    = "xfce4-terminal"
   , layoutHook  = myLayouts
-  , startupHook = spawn $ "~/.config/xmonad/other/startup.sh && dunstify " ++ ddir
+  , startupHook = spawn "~/.config/xmonad/other/startup.sh"
   }
   `removeKeysP`
   [ "M-S-q"
@@ -76,7 +76,7 @@ myXmobarPP = def
     -- | Windows should have *some* title, which should not not exceed a
     -- sane length.
     ppWindow :: String -> String
-    ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 30
+    ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 50
 
     blue, lowWhite, magenta, red, white, yellow :: String -> String
     magenta  = xmobarColor "#ff79c6" ""
