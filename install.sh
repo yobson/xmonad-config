@@ -30,8 +30,9 @@ zypper in rofi xmonad xmobar gmp-devel ncurses-devel NetworkManager-applet curl 
 command -v ghcup || curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 ## symlinks
-mkdir -p ~/.config/rofi
+mkdir -p ~/.config/rofi/themes
 ln -s $PWD/other/rofi-config.rasi $HOME/.config/rofi/config.rasi
+ln -s $PWD/other/rofi-theme.rasi $HOME/.config/rofi/themes/rofi-theme.rasi
 
 if [[ $PWD != $HOME/.config/xmonad ]]; then
   [[ -d $HOME/.config/xmonad ]] && rm -fr $HOME/.config/xmonad
